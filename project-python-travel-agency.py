@@ -1,3 +1,5 @@
+#Proyecto Agencia de viaje sección 77
+
 origen = [
     {
         "pais_origen": "Brasil",
@@ -104,6 +106,103 @@ destino = [
     }
 ]
 
+menu_zona_norte = [
+    { "Lunes": "Ceviche de pescado",
+    "valor_menu": 5990
+    },
+    {"Martes": "Locro de papas",
+    "valor_menu": 7990
+    },
+    {"Miércoles": "Seco de cordero",
+    "valor_menu": 7990
+    },
+    {"Jueves": "Pollo Asado con Papas fritas",
+    "valor_menu": 7990
+    },
+    {"Viernes": "Chupe de Jaiba",
+    "valor_menu": 7990
+    },
+    {"Sábado": "Arroz con Asado",
+    "valor_menu": 7990
+    },
+    {"Domingo": "Pescado con Ensalada",
+    "valor_menu": 7990
+    }
+    ]
+
+menu_zona_sur = [
+    { "Lunes": "Porotos con riendas",
+    "valor_menu": 5990
+    },
+    {"Martes": "Curanto",
+    "valor_menu": 7990
+    },
+    {"Miércoles": "Cazuela de ave",
+        "valor_menu": 7990
+    },
+    {"Jueves": "Empanadas de mariscos",
+    "valor_menu": 7990
+    },
+    {"Viernes": "Centolla gratinada",
+    "valor_menu": 7990
+    },
+    {"Sábado": "Congrio frito",
+    "valor_menu": 7990
+    },
+    {"Domingo": "Curry de congrio",
+    "valor_menu": 7990
+    }
+    ]
+
+menu_zona_central = [
+    { "Lunes": "Porotos con riendas",
+    "valor_menu": 5990
+    },
+    {"Martes": "Pescado frito",
+    "valor_menu": 7990
+    },
+    {"Miércoles": "Pastel de choclo",
+    "valor_menu": 7990
+    },
+    {"Jueves": "Cazuela de vacuno",
+    "valor_menu": 7990
+    },
+    {"Viernes": "Asado a la parrilla",
+    "valor_menu": 7990
+    },
+    {"Sábado": "Paila marina",
+    "valor_menu": 7990
+    },
+    {"Domingo": "Porotos con riendas",
+    "valor_menu": 7990
+    }
+    ]
+
+menu_zona_lacustre = [
+    { "Lunes": "Curanto en hoyo",
+    "valor_menu": 7990
+    },
+    {"Martes": "Pescado frito",
+    "valor_menu": 7990
+    },
+    {"Miércoles": "Machas a la Parmesana con pebre",
+        "valor_menu": 7990
+    },
+    {"Jueves": "Caldillo de mariscos",
+    "valor_menu": 7990
+    },
+    {"Viernes": "Trucha a la parrilla",
+    "valor_menu": 7990
+    },
+    {"Sábado": "Cazuela de cordero",
+    "valor_menu": 7990
+    },
+    {"Domingo": "Asado de cordero",
+    "valor_menu": 7990
+    }
+    ]
+
+# Origen 
 
 def obtener_origen(origen):
     opc = int(input(f"""
@@ -131,9 +230,10 @@ def obtener_origen(origen):
 
         return total_vuelo, cantidad_personas
     else:
-        print("No ha ingresado un origen válido.")
+        print("No ha ingresado un origen válida.")
         return None, None
 
+#Destino
 
 def obtener_destino(destino):
     opc = int(input(f"""
@@ -164,6 +264,7 @@ def obtener_destino(destino):
         print("No ha ingresado un destino válido.")
         return None
 
+#Tipo de Transporte    
 
 def obtener_transporte(total_anterior=0, opciones_elegidas=[]):
     terrestre = [
@@ -263,7 +364,7 @@ def obtener_transporte(total_anterior=0, opciones_elegidas=[]):
 
     opcion = input("¿Deseas usar otro transporte? (Sí/No): ")
 
-    if opcion.lower() == "sí" or opcion.lower() == "si":
+    if opcion.lower() == "sí" or opcion.upper() == "Si":
         return obtener_transporte(total, opciones_elegidas)
     else:
         print("Has finalizado con Transporte")
@@ -278,7 +379,6 @@ def obtener_transporte(total_anterior=0, opciones_elegidas=[]):
         print("----------------------------------------------")
         print("Total acumulado:     ", total)
         return total, opciones_elegidas
-
 
 def aplicar_descuentos(cantidad_personas, total_vuelo):
     descuento = 0
@@ -313,25 +413,26 @@ def aplicar_descuentos(cantidad_personas, total_vuelo):
         print(f"\nDescuento por discapacidad aplicado: {descuento_discapacidad * 100}%")
         print(f"Total con descuento por discapacidad: {total_con_descuento_discapacidad} CLP")
 
+#Selección Hotel
 
 def seleccionar_hoteles(zona):
     if zona == "Norte Grande":
         hoteles = {
-            "Hotel A": {
+            "Hotel Holiday Inn": {
                 "Simple": 50000,
                 "Matrimonial": 70000,
                 "Twins": 80000,
                 "Cama extra": 90000,
                 "Servicio especial para bebés": 100000
             },
-            "Hotel B": {
+            "Hotel Dreams": {
                 "Simple": 60000,
                 "Matrimonial": 80000,
                 "Twins": 90000,
                 "Cama extra": 100000,
                 "Servicio especial para bebés": 110000
             },
-            "Hotel C": {
+            "Hotel Casa Grande": {
                 "Simple": 70000,
                 "Matrimonial": 90000,
                 "Twins": 100000,
@@ -341,21 +442,21 @@ def seleccionar_hoteles(zona):
         }
     elif zona == "Zona Central":
         hoteles = {
-            "Hotel D": {
+            "Hotel Diego Portales": {
                 "Simple": 35000,
                 "Matrimonial": 55000,
                 "Twins": 65000,
                 "Cama extra": 75000,
                 "Servicio especial para bebés": 85000
             },
-            "Hotel E": {
+            "Hotel Dreams": {
                 "Simple": 40000,
                 "Matrimonial": 60000,
                 "Twins": 70000,
                 "Cama extra": 80000,
                 "Servicio especial para bebés": 90000
             },
-            "Hotel F": {
+            "Hotel Holiday Inn": {
                 "Simple": 45000,
                 "Matrimonial": 65000,
                 "Twins": 75000,
@@ -365,21 +466,21 @@ def seleccionar_hoteles(zona):
         }
     elif zona == "Zona Sur":
         hoteles = {
-            "Hotel G": {
+            "Hotel Holiday Inn": {
                 "Simple": 40000,
                 "Matrimonial": 60000,
                 "Twins": 70000,
                 "Cama extra": 80000,
                 "Servicio especial para bebés": 90000
             },
-            "Hotel H": {
+            "Hotel Dreams": {
                 "Simple": 45000,
                 "Matrimonial": 65000,
                 "Twins": 75000,
                 "Cama extra": 85000,
                 "Servicio especial para bebés": 95000
             },
-            "Hotel I": {
+            "Hotel Diego Portales": {
                 "Simple": 50000,
                 "Matrimonial": 70000,
                 "Twins": 80000,
@@ -398,7 +499,6 @@ def mostrar_opciones_hoteles(hoteles):
     for i, hotel in enumerate(hoteles, start=1):
         print(f"{i}. {hotel}")
 
-
 def seleccionar_opcion_habitacion(hoteles, hotel):
     print(f"Habitaciones disponibles en {hotel}:")
     hoteles_disponibles = hoteles[hotel]
@@ -411,7 +511,6 @@ def seleccionar_opcion_habitacion(hoteles, hotel):
 
     return habitacion_seleccionada, precio_habitacion
 
-
 def validar_cantidad_noches():
     while True:
         try:
@@ -423,6 +522,51 @@ def validar_cantidad_noches():
         except ValueError:
             print("Ingrese un número válido.")
 
+total_menu = 0
+
+def mostrar_menu(menu):
+    global total_menu
+    while True:
+        for posicion, dia in enumerate(menu):
+            nombre_dia = list(dia.keys())[0]
+            nombre_plato = list(dia.values())[0]
+            precio_menu = dia["valor_menu"]
+            print(f"{posicion + 1}. {nombre_dia}: {nombre_plato}, precio menú: {precio_menu}")
+
+        opcion_menu_elegido = int(input("Ingrese el número de menú que desea agregar: "))
+
+        if opcion_menu_elegido >= 1 and opcion_menu_elegido <= len(menu):
+            cantidad = int(input("Ingrese la cantidad de menús que desea llevar: "))
+            total_menu = menu[opcion_menu_elegido - 1]['valor_menu'] * cantidad
+            print(f"Total Menús: {total_menu}")
+            break
+        else:
+            print("Ingrese una opción válida.\n")
+   
+def seleccion_zona():
+    while True:
+        seleccion_zona = int(input("""Selecciona una opción de acuerdo a tu viaje: 
+            1. Zona Norte
+            2. Zona Central
+            3. Zona Sur
+            4. Zona Lacustre
+            """))
+        if seleccion_zona == 1:
+            mostrar_menu(menu_zona_norte)
+            break
+        elif seleccion_zona == 2:
+            mostrar_menu(menu_zona_central)
+            break
+        elif seleccion_zona == 3:
+            mostrar_menu(menu_zona_sur)
+            break
+        elif seleccion_zona == 4:
+            mostrar_menu(menu_zona_lacustre)
+            break
+        else:
+            print("Su opción no es válida")
+
+seleccion_zona()
 
 # Menú principal
 print("¡Bienvenido a su Agencia de Viajes!")
