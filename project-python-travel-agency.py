@@ -479,6 +479,12 @@ def mostrar_opciones_hoteles(hoteles):
     print("Opciones de hoteles disponibles:")
     for i, hotel in enumerate(hoteles, start=1):
         print(f"{i}. {hotel}")
+        print(f"{i}. {hotel}")
+    habitaciones = hoteles[hotel]
+    for tipo_habitacion, precio_habitacion in habitaciones.items():
+        precio_habitacion_formateado = "${:,.0f} CLP".format(precio_habitacion)
+        print(f"   - {tipo_habitacion}: {precio_habitacion_formateado}")
+
 
 def mostrar_menu_disponible(menu):
     print("Opciones de alimentación disponibles: ")
