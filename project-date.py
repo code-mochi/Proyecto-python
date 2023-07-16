@@ -104,10 +104,15 @@ destino = [
     }
 ]
 
+fecha_viaje = None
 
-def obtener_origen(origen):
+
+def obtener_fecha_viaje():
+    global fecha_viaje
     fecha_viaje = input("Ingrese la fecha para realizar el viaje (DD/MM/AAAA): ")
 
+
+def obtener_origen(origen):
     opc = int(input(f"""
     Lista de Origen:
     1. {origen[0]["pais_origen"]}
@@ -285,7 +290,7 @@ def obtener_transporte(total_anterior=0, opciones_elegidas=[]):
 
 def aplicar_descuentos(cantidad_personas, total_vuelo):
     descuento = 0
-    
+
     edad_valida = False
     while not edad_valida:
         edad = input("Ingrese su edad: ")
@@ -390,6 +395,30 @@ def seleccionar_hoteles(zona):
                 "Servicio especial para bebés": 100000
             }
         }
+    elif zona == "Zona Austral":
+        hoteles = {
+            "Hotel J": {
+                "Simple": 60000,
+                "Matrimonial": 80000,
+                "Twins": 90000,
+                "Cama extra": 100000,
+                "Servicio especial para bebés": 110000
+            },
+            "Hotel K": {
+                "Simple": 70000,
+                "Matrimonial": 90000,
+                "Twins": 100000,
+                "Cama extra": 110000,
+                "Servicio especial para bebés": 120000
+            },
+            "Hotel L": {
+                "Simple": 80000,
+                "Matrimonial": 100000,
+                "Twins": 110000,
+                "Cama extra": 120000,
+                "Servicio especial para bebés": 130000
+            }
+        }
     else:
         return None
 
@@ -432,18 +461,22 @@ print("¡Bienvenido a su Agencia de Viajes!")
 
 while True:
     print("\nMenú Principal:")
-    print("1. Seleccionar origen")
-    print("2. Seleccionar destino")
-    print("3. Seleccionar transporte")
+    print("1. Fecha de Viaje")
+    print("2. Seleccionar Origen")
+    print("3. Seleccionar Destino")
+    print("4. Seleccionar Transporte")
     print("0. Salir")
 
     opcion_menu = int(input("Ingrese el número de opción: "))
 
     if opcion_menu == 1:
+        fecha_viaje = input("Ingrese la fecha para realizar el viaje (DD/MM/AAAA): ")
+        print(f"Fecha de viaje seleccionada: {fecha_viaje}")
+    elif opcion_menu == 2:
         total_vuelo, cantidad_personas = obtener_origen(origen)
         if total_vuelo and cantidad_personas:
             aplicar_descuentos(cantidad_personas, total_vuelo)
-    elif opcion_menu == 2:
+    elif opcion_menu == 3:
         region_destino = obtener_destino(destino)
         if region_destino:
             hoteles = seleccionar_hoteles(region_destino)
@@ -470,7 +503,7 @@ while True:
 
                 else:
                     print("Cantidad de noches inválida.")
-    elif opcion_menu == 3:
+    elif opcion_menu == 4:
         total_transporte, opciones_transporte = obtener_transporte()
     elif opcion_menu == 0:
         print("Gracias por utilizar nuestro servicio. ¡Hasta luego!")
