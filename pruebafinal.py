@@ -247,18 +247,21 @@ def obtener_descuento_por_fecha(fecha):
     return descuento, temporada
 
 # Obtener la fecha proporcionada por el usuario
-dia = int(input("Ingrese el día: "))
-mes = int(input("Ingrese el mes: "))
-año = int(input("Ingrese el año: "))
+dia = int(input("Ingrese el día que desea viajar: "))
+mes = int(input("Ingrese el mes que desea viajar: "))
+año = int(input("Ingrese el año que desea viajar: "))
+if año < 2023:
+    print("El año ingresado es inválido. Debe ser mayor o igual a 2023.")
+  
+else:
+    global fecha_previa
+    fecha_previa = datetime(año, mes, dia)
 
-global fecha_previa
-fecha_previa = datetime(año, mes, dia)
-
-# Obtener el descuento y la temporada correspondiente
-descuento_obtenido, temporada_obtenida = obtener_descuento_por_fecha(fecha_previa)
-print("La temporada es", temporada_obtenida)
-print("El descuento para la fecha", dia, "/", mes, "/", año, "es del", descuento_obtenido * 100, "%.")
-
+    # Obtener el descuento y la temporada correspondiente
+    descuento_obtenido, temporada_obtenida = obtener_descuento_por_fecha(fecha_previa)
+    print("La temporada es", temporada_obtenida)
+    print("El descuento para la fecha", dia, "/", mes, "/", año, "es del", descuento_obtenido * 100, "%.")
+    
 def obtener_origen(origen):
     opc = int(input(f"""
     Lista de Origen:
@@ -449,7 +452,7 @@ def obtener_transporte(total_anterior=0, opciones_elegidas=[]):
 
     opcion = input("¿Deseas usar otro transporte? (Sí/No): ")
 
-    if opcion.lower() == "sí" or opcion.lower() == "si":
+    if opcion.lower() == "sí" or opcion.upper() == "Si":
         return obtener_transporte(total, opciones_elegidas)
     else:
         print("Has finalizado con Transporte")
