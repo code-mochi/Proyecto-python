@@ -496,46 +496,46 @@ def aplicar_descuentos(cantidad_personas, total_vuelo):
 def seleccionar_menu(zona):
     if zona == "Zona Norte":
         menu = [
-    { "Lunes": "Ceviche de pescado",
+    { "Menú": "Ceviche de pescado",
     "valor_menu": 5990
     },
-    {"Martes": "Locro de papas",
+    {"Menú": "Locro de papas",
     "valor_menu": 7990
     },
-    {"Miércoles": "Seco de cordero",
+    {"Menú": "Seco de cordero",
     "valor_menu": 7990
     },
-    {"Jueves": "Pollo Asado con Papas fritas",
+    {"Menú": "Pollo Asado con Papas fritas",
     "valor_menu": 7990
     },
-    {"Viernes": "Chupe de Jaiba",
+    {"Menú": "Chupe de Jaiba",
     "valor_menu": 7990
     },
-    {"Sábado": "Arroz con Asado",
+    {"Menú": "Arroz con Asado",
     "valor_menu": 7990
     },
-    {"Domingo": "Pescado con Ensalada",
+    {"Menú": "Pescado con Ensalada",
     "valor_menu": 7990
     }]
         
     elif zona == "Zona Central":
         menu = [
-    { "Lunes": "Porotos con riendas",
+    { "Menú": "Porotos con riendas",
     "valor_menu": 5990
     },
-    {"Martes": "Pescado frito",
+    {"Menú": "Pescado frito",
     "valor_menu": 7990
     },
-    {"Miércoles": "Pastel de choclo",
+    {"Menú": "Pastel de choclo",
     "valor_menu": 7990
     },
-    {"Jueves": "Cazuela de vacuno",
+    {"Menú": "Cazuela de vacuno",
     "valor_menu": 7990
     },
-    {"Viernes": "Asado a la parrilla",
+    {"Menú": "Asado a la parrilla",
     "valor_menu": 7990
     },
-    {"Sábado": "Paila marina",
+    {"Menú": "Paila marina",
     "valor_menu": 7990
     },
     {"Domingo": "Porotos con riendas",
@@ -544,49 +544,49 @@ def seleccionar_menu(zona):
         
     elif zona == "Zona Sur" :
         menu = [
-    { "Lunes": "Porotos con riendas",
+    { "Menú": "Porotos con riendas",
     "valor_menu": 5990
     },
-    {"Martes": "Curanto",
+    {"Menú": "Curanto",
     "valor_menu": 7990
     },
-    {"Miércoles": "Cazuela de ave",
+    {"Menú": "Cazuela de ave",
         "valor_menu": 7990
     },
-    {"Jueves": "Empanadas de mariscos",
+    {"Menú": "Empanadas de mariscos",
     "valor_menu": 7990
     },
-    {"Viernes": "Centolla gratinada",
+    {"Menú": "Centolla gratinada",
     "valor_menu": 7990
     },
-    {"Sábado": "Congrio frito",
+    {"Menú": "Congrio frito",
     "valor_menu": 7990
     },
-    {"Domingo": "Curry de congrio",
+    {"Menú": "Curry de congrio",
     "valor_menu": 7990
     }]
         
     elif zona == "Zona Lacustre":
         menu = [
-    { "Lunes": "Curanto en hoyo",
+    { "Menú": "Curanto en hoyo",
     "valor_menu": 7990
     },
-    {"Martes": "Pescado frito",
+    {"Menú": "Pescado frito",
     "valor_menu": 7990
     },
-    {"Miércoles": "Machas a la Parmesana con pebre",
+    {"Menú": "Machas a la Parmesana con pebre",
         "valor_menu": 7990
     },
-    {"Jueves": "Caldillo de mariscos",
+    {"Menú": "Caldillo de mariscos",
     "valor_menu": 7990
     },
-    {"Viernes": "Trucha a la parrilla",
+    {"Menú": "Trucha a la parrilla",
     "valor_menu": 7990
     },
-    {"Sábado": "Cazuela de cordero",
+    {"Menú": "Cazuela de cordero",
     "valor_menu": 7990
     },
-    {"Domingo": "Asado de cordero",
+    {"Menú": "Asado de cordero",
     "valor_menu": 7990
     }]   
 
@@ -702,10 +702,7 @@ def mostrar_opciones_hoteles(hoteles):
     for i, hotel in enumerate(hoteles, start=1):
         print(f"{i}. {hotel}")
         habitaciones = hoteles[hotel]
-    for tipo_habitacion, precio_habitacion in habitaciones.items():
-        precio_habitacion_formateado = "${:,.0f} CLP".format(precio_habitacion)
-        print(f"   - {tipo_habitacion}: {precio_habitacion_formateado}")
-
+        
 def mostrar_menu_disponible(menu):
     print("Opciones de alimentación disponibles: ")
     for i, dia in enumerate(menu, start=1):
@@ -769,7 +766,7 @@ while True:
     if opcion_menu == 1:
         fecha_viaje = input("Ingrese la fecha para realizar el viaje (DD/MM/AAAA): ")
         print(f"Fecha de viaje seleccionada: {fecha_viaje}")
-        
+
     elif opcion_menu == 2:
         total_vuelo, cantidad_personas = obtener_origen(origen)
         if total_vuelo and cantidad_personas:
