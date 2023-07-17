@@ -1,7 +1,11 @@
+from datetime import datetime
+
 origen = [
     {
         "pais_origen": "Brasil",
         "valor_vuelo": 241524
+        
+        
     },
     {
         "pais_origen": "Argentina",
@@ -11,7 +15,7 @@ origen = [
         "pais_origen": "España",
         "valor_vuelo": 823322
     },
-    {
+    {   
         "pais_origen": "EE.UU",
         "valor_vuelo": 554568
     },
@@ -27,10 +31,7 @@ origen = [
         "pais_origen": "Mexico",
         "valor_vuelo": 459085
     },
-    {
-        "pais_origen": "Rusia",
-        "valor_vuelo": 1463242
-    },
+   
     {
         "pais_origen": "Suecia",
         "valor_vuelo": 1094232
@@ -44,71 +45,217 @@ origen = [
 destino = [
     {
         "zona_pais": "Norte Grande",
-        "region_1": "Arica y Parinacota"
+        "region_1": "Arica y Parinacota",
+        "actividad_1": "Paseo por el Valle de Azapa",
+        "actividad_2": "Visita al Parque Nacional Lauca"
     },
     {
         "zona_pais": "Norte Grande",
-        "region_2": "Tarapacá"
+        "region_2": "Tarapacá",
+        "actividad_1": "Tour por el Salar de Huasco",
+        "actividad_2": "Visita al Geoglifo Gigante de Pintados"
     },
     {
         "zona_pais": "Norte Grande",
-        "region_3": "Antofagasta"
+        "region_3": "Antofagasta",
+        "actividad_1": "Exploración en el Desierto de Atacama",
+        "actividad_2": "Recorrido por la Mano del Desierto"
     },
     {
         "zona_pais": "Norte Grande",
-        "region_4": "Atacama"
+        "region_4": "Atacama",
+        "actividad_1": "Visita a los Geisers del Tatio",
+        "actividad_2": "Observación Astronómica en San Pedro de Atacama"
     },
     {
         "zona_pais": "Norte Grande",
-        "region_5": "Coquimbo"
+        "region_5": "Coquimbo",
+        "actividad_1": "Tour por el Valle del Elqui",
+        "actividad_2": "Avistamiento de Ballenas en la Bahía de Tongoy"
     },
     {
         "zona_pais": "Zona Central",
-        "region_6": "Valparaíso"
+        "region_6": "Valparaíso",
+        "actividad_1": "Recorrido por los Cerros de Valparaíso",
+        "actividad_2": "Visita al Museo de Bellas Artes de Valparaíso"
     },
     {
         "zona_pais": "Zona Central",
-        "region_7": "Metropolitana"
+        "region_7": "Metropolitana",
+        "actividad_1": "City Tour por Santiago",
+        "actividad_2": "Visita al Cerro San Cristóbal"
     },
     {
         "zona_pais": "Zona Central",
-        "region_8": "O'Higgins"
+        "region_8": "O'Higgins",
+        "actividad_1": "Tour por las Viñas de Colchagua",
+        "actividad_2": "Visita al Parque Nacional Radal Siete Tazas"
     },
     {
         "zona_pais": "Zona Central",
-        "region_9": "Maule"
+        "region_9": "Maule",
+        "actividad_1": "Exploración en el Parque Nacional Radal Siete Tazas",
+        "actividad_2": "Tour por las Iglesias de Chiloé"
     },
     {
         "zona_pais": "Zona Central",
-        "region_10": "Biobío"
+        "region_10": "Biobío",
+        "actividad_1": "Visita al Parque Nacional Conguillío",
+        "actividad_2": "Tour por los Saltos del Laja"
     },
     {
         "zona_pais": "Zona Sur",
-        "region_11": "Araucanía"
+        "region_11": "Araucanía",
+        "actividad_1": "Exploración en el Parque Nacional Huerquehue",
+        "actividad_2": "Visita al Mercado Municipal de Temuco"
     },
     {
         "zona_pais": "Zona Sur",
-        "region_12": "Biobío"
+        "region_12": "Los Ríos",
+        "actividad_1": "Tour por la Reserva Biológica Huilo Huilo",
+        "actividad_2": "Recorrido por los Fuertes de Valdivia"
     },
     {
         "zona_pais": "Zona Sur",
-        "region_13": "Los Lagos"
+        "region_13": "Los Lagos",
+        "actividad_1": "Navegación por los Fiordos de la Región de Los Lagos",
+        "actividad_2": "Visita a las Termas de Puyehue"
     },
     {
         "zona_pais": "Zona Sur",
-        "region_14": "Los Ríos"
+        "region_14": "Aysén",
+        "actividad_1": "Tour por el Glaciar Exploradores",
+        "actividad_2": "Avistamiento de Cóndores en Coyhaique"
     },
     {
         "zona_pais": "Zona Austral",
-        "region_15": "Aysén"
+        "region_15": "Magallanes y Antártica Chilena",
+        "actividad_1": "Exploración en el Parque Nacional Torres del Paine",
+        "actividad_2": "Navegación por los Glaciares Balmaceda y Serrano"
     }
 ]
+def cambio_moneda(valor_vuelo, origen):
+    cambio = [
+        {
+            "tipo de cambio" : "Real Brasileño (BRL)",
+            "valor": 165.91
+        },
+        {
+            "tipo de cambio" : "Peso Argentino (ARG)",
+            "valor": 3.10
+        },
+        {
+            "tipo de cambio" : "Euro (ESP)",
+            "valor": 894.54
+        },
+
+        {
+            "tipo de cambio" : "Dolar (USD)",
+            "valor": 812.89
+        },
+        {
+            "tipo de cambio" : "Euro (FRA)",
+            "valor": 894.54
+        },
+         {
+            "tipo de cambio" : "Shekel (ISR)",
+            "valor": 219.70
+        },
+                
+        {
+            "tipo de cambio" : "Peso Mexicano (MXN)",
+            "valor": 47.66
+        },
+        
+       
+        {
+            "tipo de cambio" : "Corona Sueca (KR)",
+            "valor": 75.60
+        },
+        {
+            "tipo de cambio" : "Euro (ITA)",
+            "valor": 894.54
+        }
+        
+    ]
+
+    if origen == 1:  # USD
+        total_viaje = valor_vuelo / cambio[0]["valor"]
+        print(f"Su cambio de dólares a pesos chilenos es: {round(total_viaje)} USD / {round(total_viaje * cambio[0]['valor'])} CLP")
+    elif origen == 2:  # ARG
+        total_viaje = valor_vuelo / cambio[1]["valor"]
+        print(f"Su cambio de pesos argentinos a pesos chilenos es: {round(total_viaje)} ARG / {round(total_viaje * cambio[1]['valor'])} CLP")
+    elif origen == 3:  # ESP
+        total_viaje = valor_vuelo / cambio[2]["valor"]
+        print(f"Su cambio de euros a pesos chilenos es: {round(total_viaje)} EUR / {round(total_viaje * cambio[2]['valor'])} CLP")
+        total_viaje = valor_vuelo / cambio[2]["valor"]
+        print(f"Su cambio de euros a pesos chilenos es: {round(total_viaje)} EUR / {round(total_viaje * cambio[2]['valor'])} CLP")
+    elif origen == 6:  # MXN
+        total_viaje = valor_vuelo / cambio[3]["valor"]
+        print(f"Su cambio de pesos mexicanos a pesos chilenos es: {round(total_viaje)} MXN / {round(total_viaje * cambio[3]['valor'])} CLP")
+    elif origen == 7:  # BRL
+        total_viaje = valor_vuelo / cambio[4]["valor"]
+        print(f"Su cambio de reales brasileños a pesos chilenos es: {round(total_viaje)} BRL / {round(total_viaje * cambio[4]['valor'])} CLP")
+    elif origen == 8:  # ILS
+        total_viaje = valor_vuelo / cambio[5]["valor"]
+        print(f"Su cambio de shekels a pesos chilenos es: {round(total_viaje)} ILS / {round(total_viaje * cambio[5]['valor'])} CLP")
+    elif origen == 9:  # KR
+        total_viaje = valor_vuelo / cambio[6]["valor"]
+        print(f"Su cambio de coronas suecas a pesos chilenos es:{round(total_viaje)} KR / {round(total_viaje * cambio[6]['valor'])} CLP")
+    elif origen == 10:
+        total_viaje_1 = valor_vuelo / cambio[0]["valor"]
+        total_viaje_2 = valor_vuelo / cambio[1]["valor"]
+        total_viaje_3 = valor_vuelo / cambio[2]["valor"]
+        total_viaje_4 = valor_vuelo / cambio[3]["valor"]
+        total_viaje_5 = valor_vuelo / cambio[4]["valor"]
+        total_viaje_6 = valor_vuelo / cambio[5]["valor"]
+        total_viaje_7 = valor_vuelo / cambio[6]["valor"]
+        print(f"Su cambio de dólar a pesos chilenos es: {round(total_viaje_1)} USD / {round(total_viaje_1 * cambio[0]['valor'])} CLP")
+        print(f"Su cambio de pesos argentinos a pesos chilenos es: {round(total_viaje_2)} ARG / {round(total_viaje_2 * cambio[1]['valor'])} CLP")
+        print(f"Su cambio de euros a pesos chilenos es: {round(total_viaje_3)} EUR / {round(total_viaje_3 * cambio[2]['valor'])} CLP")
+        print(f"Su cambio de pesos mexicanos a pesos chilenos es: {round(total_viaje_4)} MXN / {round(total_viaje_4 * cambio[3]['valor'])} CLP")
+        print(f"Su cambio de reales brasileños a pesos chilenos es: {round(total_viaje_5)} BRL / {round(total_viaje_5 * cambio[4]['valor'])} CLP")
+        print(f"Su cambio de shekels a pesos chilenos es: {round(total_viaje_6)} ILS / {round(total_viaje_6 * cambio[5]['valor'])} CLP")
+        print(f"Su cambio de coronas suecas a pesos chilenos es: {round(total_viaje_7)} KR / {round(total_viaje_7 * cambio[6]['valor'])} CLP")
 
 fecha_viaje = None
 
 def obtener_fecha_viaje():
     global fecha_viaje
     fecha_viaje = input("Ingrese la fecha para realizar el viaje (DD/MM/AAAA): ")
+
+def obtener_descuento_por_fecha(fecha):
+    mes = fecha.month
+
+    if mes in [1, 2]:  # Verano: enero y febrero
+        descuento = 0.05  # 5% de descuento en verano
+        temporada = "Verano"
+    elif mes in [6, 7]:  # Invierno: junio y julio 
+        descuento = 0.08  # 8% de descuento en invierno
+        temporada = "Invierno"
+    elif mes in [10, 11]:  # Primavera: octubre y noviembre
+        descuento = 0.12  # 12% de descuento en primavera
+        temporada = "Primavera"
+    elif mes in [4, 5]:  # Otoño: abril y mayo
+        descuento = 0.10  # 10% de descuento en otoño
+        temporada = "Otoño"
+    else:
+        descuento = 0  # Sin descuento para otros meses
+        temporada = "N/A"
+
+    return descuento, temporada
+
+# Obtener la fecha proporcionada por el usuario
+dia = int(input("Ingrese el día: "))
+mes = int(input("Ingrese el mes: "))
+año = int(input("Ingrese el año: "))
+
+fecha_previa = datetime(año, mes, dia)
+
+# Obtener el descuento y la temporada correspondiente
+descuento_obtenido, temporada_obtenida = obtener_descuento_por_fecha(fecha_previa)
+print("La temporada es", temporada_obtenida)
+print("El descuento para la fecha", dia, "/", mes, "/", año, "es del", descuento_obtenido * 100, "%.")
 
 def obtener_origen(origen):
     opc = int(input(f"""
@@ -140,7 +287,6 @@ def obtener_origen(origen):
         print("No ha ingresado un origen válido.")
         return None, None
 
-
 def obtener_destino(destino):
     opc = int(input(f"""
     Lista de Destinos:
@@ -170,7 +316,36 @@ def obtener_destino(destino):
         print("No ha ingresado un destino válido.")
         return None
 
+def elegir_actividad(destino):
+    print("Regiones de Chile:")
+    for num, region in enumerate(destino, start=1):
+        print(f"{num}. {region['zona_pais']} - {region[f'region_{num}']}")
 
+    region_elegida = int(input("Elige el número de la región de Chile: "))
+
+    if region_elegida in range(1, len(destino) + 1):
+        region = destino[region_elegida - 1][f"region_{region_elegida}"]
+        actividad_1 = destino[region_elegida - 1][f"actividad_1"]
+        actividad_2 = destino[region_elegida - 1][f"actividad_2"]
+
+        print(f"\nActividades turísticas en {region}:")
+        print(f"1. {actividad_1}")
+        print(f"2. {actividad_2}")
+
+        actividad_elegida = int(input("Elige el número de la actividad turística: "))
+
+        if actividad_elegida == 1:
+            actividad = actividad_1
+        elif actividad_elegida == 2:
+            actividad = actividad_2
+        else:
+            print("El número de actividad turística seleccionado no es válido.")
+            return
+
+        print(f"\n¡Excelente elección! Disfruta de {actividad} en {region}.")
+    else:
+        print("El número de región seleccionado no es válido.")
+      
 def obtener_transporte(total_anterior=0, opciones_elegidas=[]):
     terrestre = [
         {
@@ -285,7 +460,6 @@ def obtener_transporte(total_anterior=0, opciones_elegidas=[]):
         print("Total acumulado:     ", total)
         return total, opciones_elegidas
 
-
 def aplicar_descuentos(cantidad_personas, total_vuelo):
     descuento = 0
 
@@ -318,7 +492,7 @@ def aplicar_descuentos(cantidad_personas, total_vuelo):
         total_con_descuento_discapacidad = total_con_descuento - (total_con_descuento * descuento_discapacidad)
         print(f"\nDescuento por discapacidad aplicado: {descuento_discapacidad * 100}%")
         print(f"Total con descuento por discapacidad: {total_con_descuento_discapacidad} CLP")
-
+ 
 def seleccionar_menu(zona):
     if zona == "Zona Norte":
         menu = [
@@ -523,7 +697,6 @@ def seleccionar_hoteles(zona):
 
     return hoteles
 
-
 def mostrar_opciones_hoteles(hoteles):
     print("Opciones de hoteles disponibles:")
     for i, hotel in enumerate(hoteles, start=1):
@@ -555,7 +728,6 @@ def mostrar_menu_disponible(menu):
         print("Ingrese una opción válida.\n")
         return None
 
-
 def seleccionar_opcion_habitacion(hoteles, hotel):
     print(f"Habitaciones disponibles en {hotel}:")
     hoteles_disponibles = hoteles[hotel]
@@ -568,7 +740,6 @@ def seleccionar_opcion_habitacion(hoteles, hotel):
 
     return habitacion_seleccionada, precio_habitacion
 
-
 def validar_cantidad_noches():
     while True:
         try:
@@ -580,7 +751,6 @@ def validar_cantidad_noches():
         except ValueError:
             print("Ingrese un número válido.")
 
-
 # Menú principal
 print("¡Bienvenido a su Agencia de Viajes!")
 
@@ -589,8 +759,9 @@ while True:
     print("1. Fecha de Viaje")
     print("2. Seleccione Origen")
     print("3. Seleccione Destino")
-    print("4. Seleccione Menú de alimentación")
-    print("5. Seleccione Transporte")
+    print("4. Seleccione Actividades")
+    print("5. Seleccione Menú de alimentación")
+    print("6. Seleccione Transporte")
     print("0. Salir")
 
     opcion_menu = int(input("Ingrese el número de opción: "))
@@ -631,8 +802,10 @@ while True:
 
                 else:
                     print("Cantidad de noches inválida.")
-
     elif opcion_menu == 4:
+        elegir_actividad(destino)
+        
+    elif opcion_menu == 5:
         opcion_zona = 0
         while opcion_zona not in [1,2,3,4]:
             opcion_zona = int(input("""Seleccione una opción de zona: 
@@ -660,10 +833,12 @@ while True:
         if total_menu:
             pass
 
-    elif opcion_menu == 5:
+    elif opcion_menu == 6:
         total_transporte, opciones_transporte = obtener_transporte()
     elif opcion_menu == 0:
         print("Gracias por utilizar nuestro servicio. ¡Hasta luego!")
         break
     else:
         print("Opción inválida. Por favor, seleccione una opción válida.")
+
+
